@@ -1,0 +1,21 @@
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// flexbox mixin direction, justify, align
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$start-color: #f72585;
+$end-color: #7209b7;
+
+@mixin radial-gradient($start-color, $end-color) {
+  background: -webkit-radial-gradient($start-color, $end-color);
+}

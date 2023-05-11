@@ -1,0 +1,13 @@
+@import "/src/App.scss";
+
+#Home {
+  @include flex(column, space-around, center);
+  //@include radial-gradient(#000000, gold);
+  height: 100vh;
+  .card-of-the-day {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}
