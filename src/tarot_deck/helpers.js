@@ -53,4 +53,4 @@ const getCardOfTheDayFromBackend = async (cardOfTheDay, setCardOfTheDay) => {
   //return data;
 };
 
-export { getCard, getCardOfTheDayFromBackend };
+export { getCard, getCardOfTheDayFromBackend, sendCardToBackend };
