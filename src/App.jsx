@@ -30,6 +30,8 @@ function App() {
           <Home cardOfTheDay={cardOfTheDay} setCardOfTheDay={setCardOfTheDay} />
         }
       />
+      {/*       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} /> */}
     </Routes>
   );
 }

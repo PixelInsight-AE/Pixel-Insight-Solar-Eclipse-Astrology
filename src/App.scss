@@ -13,9 +13,6 @@
   align-items: $align;
 }
 
-$start-color: #f72585;
-$end-color: #7209b7;
-
-@mixin radial-gradient($start-color, $end-color) {
-  background: -webkit-radial-gradient($start-color, $end-color);
+@mixin radial-gradient($start, $end) {
+  background: radial-gradient(circle at center, $gradient-start, $gradient-end);
 }

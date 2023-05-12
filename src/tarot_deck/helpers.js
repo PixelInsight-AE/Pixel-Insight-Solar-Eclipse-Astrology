@@ -68,4 +68,80 @@ const getCardOfTheDay = async (todaysCard) => {
 //   }
 // };
 
-export { getCard, sendCardToBackend, getCardOfTheDay };
+const createUser = async (user) => {
+  console.log("createUser");
+  fetch("http://localhost:3333/users", {
+    method: "POST",
+    data: {
+      user: {
+        username: user.username,
+        password: user.password,
+      },
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+const loginUser = async () => {
+  console.log("loginUser");
+  fetch("http://localhost:3333/sessions", {
+    method: "POST",
+    data: {
+      user: {
+        username: "Emma-Lou",
+        password: "password",
+      },
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+const logoutUser = async (user) => {
+  console.log("logoutUser");
+  fetch("http://localhost:3333/sessions", {
+    method: "DELETE",
+    data: {
+      user: {
+        username: user.username,
+        password: user.password,
+      },
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+const checkAuth = async (user) => {
+  console.log("checkAuth");
+  fetch("http://localhost:3333/authenticated", {
+    method: "GET",
+    data: {
+      user: {
+        username: user.username,
+        password: user.password,
+      },
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+export {
+  getCard,
+  sendCardToBackend,
+  getCardOfTheDay,
+  createUser,
+  loginUser,
+  logoutUser,
+  checkAuth,
+};
