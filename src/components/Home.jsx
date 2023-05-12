@@ -39,9 +39,9 @@ const CardOfTheDay = ({ cardOfTheDay, setCardOfTheDay }) => {
       });
     }
   };
-  useEffect(() => {
-    fetchCardOfTheDay();
-  }, []);
+  // useEffect(() => {
+  //   fetchCardOfTheDay();
+  // }, []);
   return (
     <div className="card-of-the-day">
       <h2>{cardOfTheDay.name}</h2>

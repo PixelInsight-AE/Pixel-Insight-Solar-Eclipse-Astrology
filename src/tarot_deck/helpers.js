@@ -51,7 +51,6 @@ const getCardOfTheDay = async (todaysCard) => {
   todaysCard = data;
 };
 
-<<<<<<< HEAD
 // const getCardOfTheDayFromBackend = async (setCardOfTheDay) => {
 //   const response = await fetch("http://localhost:3333/card_of_the_day", {
 //     method: "GET",
@@ -70,6 +69,3 @@ const getCardOfTheDay = async (todaysCard) => {
 // };
 
 export { getCard, sendCardToBackend, getCardOfTheDay };
-=======
-export { getCard, getCardOfTheDayFromBackend, sendCardToBackend };
->>>>>>> 1bc73dc5436908ef43dc917e35ae0a6da338f612
