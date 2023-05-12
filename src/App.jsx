@@ -20,6 +20,8 @@ function App() {
     majorArcana: true,
     description:
       "The Fool card represents new beginnings and the start of a new journey. The figure on the card is carefree and ready for adventure, with his head held high and a small bag slung over his shoulder. He is about to step off a cliff, but he does not seem to be worried or afraid. This card is associated with the element of fire and the zodiac sign Aries, which both represent energy, passion, and impulsiveness. When this card appears in a reading, it is a reminder to embrace change and take risks, even if they seem daunting at first. Reversed, the Fool can indicate carelessness or recklessness, so it is important to balance spontaneity with caution.",
+    userFeelings: true,
+    userThoughts: "I feel like I am ready to take on the world!",
   });
 
   return (

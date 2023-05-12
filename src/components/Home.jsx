@@ -36,6 +36,8 @@ const CardOfTheDay = ({ cardOfTheDay, setCardOfTheDay }) => {
         astrology: data.card.astrology,
         reversed: data.card.meaning_rev,
         number: data.card.numerology,
+        userFeelings: data.card.user_feelings,
+        userThoughts: data.card.user_thoughts,
       });
     }
   };
@@ -52,6 +54,8 @@ const CardOfTheDay = ({ cardOfTheDay, setCardOfTheDay }) => {
       <p>Astrology: {cardOfTheDay.astrology}</p>
       <p>Reversed: {cardOfTheDay.reversed}</p>
       <p>Number: {cardOfTheDay.number}</p>
+      <p>User Feelings: {cardOfTheDay.userFeelings}</p>
+      <p>User Thoughts: {cardOfTheDay.userThoughts}</p>
 
       <button onClick={() => randomCard(setCardOfTheDay)}>
         sets state to new random card
