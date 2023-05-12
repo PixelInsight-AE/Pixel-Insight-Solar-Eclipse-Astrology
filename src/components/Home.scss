@@ -4,7 +4,7 @@ $gradient-start: #1d1f20;
 $gradient-end: #2e3031;
 
 #Home {
-  @include flex(column, center, center);
+  @include flex(column, flex-start, center);
   @include radial-gradient($gradient-start, $gradient-end);
   color: white;
   height: 100vh;
@@ -13,6 +13,7 @@ $gradient-end: #2e3031;
     font-family: "Marck Script", cursive;
     font-size: 1rem;
     text-align: center;
+    margin-top: 1rem;
     //border-bottom: 1px solid goldenrod;
     color: goldenrod;
     .buttons-wrapper {
@@ -22,6 +23,7 @@ $gradient-end: #2e3031;
       button {
         background-color: transparent;
         border: 1px solid goldenrod;
+        width: 60px;
         border-radius: 5px;
         color: goldenrod;
         font-size: 0.5rem;
@@ -54,9 +56,10 @@ $gradient-end: #2e3031;
     margin: 1rem;
     img {
       border: 1px solid goldenrod;
+      border-radius: 10px;
       box-shadow: 0 0 10px 5px goldenrod;
       width: 200px;
-      height: 320px;
+
       object-fit: cover;
     }
     h3 {

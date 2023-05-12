@@ -8,8 +8,11 @@ const Header = () => {
         <button className="login-button" onClick={loginUser}>
           log In
         </button>
-        <button className="signup-button" onClick={createUser()}>
+        <button className="signup-button" onClick={createUser}>
           Sign Up
+        </button>
+        <button className="logout-button" onClick={logoutUser}>
+          logout
         </button>
       </div>
     </header>

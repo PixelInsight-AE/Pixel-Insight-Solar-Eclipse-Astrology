@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import { sendCardToBackend } from "/src/tarot_deck/helpers.js";
+
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
 import "./App.scss";
 
