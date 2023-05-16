@@ -2,7 +2,7 @@ const tarotDeck = [
   {
     name: "The Fool",
     number: 0,
-    image: "src/assets/TarotDeck/the fool.png",
+    image: "https://i.imgur.com/p79Yjzs.png",
     meaning: "New beginnings, adventure, opportunity",
     reversed: "Carelessness, recklessness, foolishness",
     astrology: "Aries",
@@ -15,7 +15,7 @@ const tarotDeck = [
   {
     name: "The Magician",
     number: 1,
-    image: "src/assets/TarotDeck/themagician.png",
+    image: "https://i.imgur.com/733yhrf.png",
     meaning: "Manifestation, creation, willpower",
     reversed: "Manipulation, illusion, overconfidence",
     astrology: "Mercury",
@@ -28,7 +28,7 @@ const tarotDeck = [
   {
     name: "The High Priestess",
     number: 2,
-    image: "src/assets/TarotDeck/highpresties.png",
+    image: "https://i.imgur.com/JyG8WiK.png",
     meaning: "Intuition, mystery, wisdom",
     reversed: "Mistrust, doubt, secrets revealed",
     astrology: "Moon",
@@ -41,7 +41,7 @@ const tarotDeck = [
   {
     name: "The Empress",
     number: 3,
-    image: "src/assets/TarotDeck/theempress.png",
+    image: "https://i.imgur.com/vYncD06.png",
     meaning: "Femininity, creativity, abundance",
     reversed: "Emotional dependency, overindulgence, victim mentality",
     astrology: "Venus",
@@ -54,7 +54,7 @@ const tarotDeck = [
   {
     name: "The Emperor",
     number: 4,
-    image: "src/assets/TarotDeck/theEmperor.png",
+    image: "https://i.imgur.com/iyMlNHP.png",
     meaning: "Authority, structure, control",
     reversed: "Domineering, stubbornness, rigidity",
     astrology: "Mars",
@@ -67,7 +67,7 @@ const tarotDeck = [
   {
     name: "The Hierophant",
     number: 5,
-    image: "src/assets/TarotDeck/theHierophant.png",
+    image: "https://i.imgur.com/NddPGzg.png",
     meaning: "Tradition, conformity, institutions",
     reversed: "Rebellion, non-conformity, individuality",
     astrology: "Taurus",
@@ -80,7 +80,7 @@ const tarotDeck = [
   {
     name: "The Lovers",
     number: 6,
-    image: "src/assets/TarotDeck/theLovers.png",
+    image: "https://i.imgur.com/3FyiB0n.png",
     meaning: "Love, harmony, relationships",
     reversed: "Unrequited love, indecision, disharmony",
     astrology: "Venus",
@@ -93,7 +93,7 @@ const tarotDeck = [
   {
     name: "The Chariot",
     number: 7,
-    image: "src/assets/TarotDeck/theChariot.png",
+    image: "https://i.imgur.com/vJNTDTI.png",
     meaning: "Victory, control, willpower",
     reversed: "Defeat, lack of control, surrender",
     astrology: "Sun",
@@ -106,7 +106,7 @@ const tarotDeck = [
   {
     name: "Strength",
     number: 8,
-    image: "src/assets/TarotDeck/Strength.png",
+    image: "https://i.imgur.com/VkHDr0H.png",
     meaning: "Courage, compassion, inner strength",
     reversed: "Weakness, fear, cruelty",
     astrology: "Leo",
@@ -119,7 +119,7 @@ const tarotDeck = [
   {
     name: "The Hermit",
     number: 9,
-    image: "src/assets/TarotDeck/theHermit.png",
+    image: "https://i.imgur.com/uer8BNM.png",
     meaning: "Meditation, introspection, solitude",
     reversed: "Withdrawal, isolation, loneliness",
     astrology: "Virgo",
@@ -132,7 +132,7 @@ const tarotDeck = [
   {
     name: "Wheel of Fortune",
     number: 10,
-    image: "src/assets/TarotDeck/WheelOfFortune.png",
+    image: "https://i.imgur.com/IaG7hWD.png",
     meaning: "Luck, karma, cycles",
     reversed: "Bad luck, misfortune, stagnation",
     astrology: "Jupiter",
@@ -145,7 +145,7 @@ const tarotDeck = [
   {
     name: "Justice",
     number: 11,
-    image: "src/assets/TarotDeck/Justice.png",
+    image: "https://i.imgur.com/3l5VsLx.png",
     meaning: "Fairness, truth, cause and effect",
     reversed: "Unfairness, dishonesty, imbalance",
     astrology: "Libra",
@@ -158,7 +158,7 @@ const tarotDeck = [
   {
     name: "The Hangman",
     number: 12,
-    image: "src/assets/TarotDeck/TheHangedMan.png",
+    image: "https://i.imgur.com/Yq4bpJK.png",
     meaning: "Sacrifice, enlightenment, new perspective",
     reversed: "Self-sabotage, victim mentality, martyrdom",
     astrology: "Neptune",
@@ -171,7 +171,7 @@ const tarotDeck = [
   {
     name: "Death",
     number: 13,
-    image: "src/assets/TarotDeck/Death.png",
+    image: "https://i.imgur.com/8HZ9aTw.png",
     meaning: "Transformation, rebirth, letting go",
     reversed: "Resistance to change, clinging to the past, stagnation",
     astrology: "Scorpio",
@@ -184,7 +184,7 @@ const tarotDeck = [
   {
     name: "Temperance",
     number: 14,
-    image: "src/assets/TarotDeck/Temperance.png",
+    image: "https://i.imgur.com/n2vZqGq.png",
     meaning: "Balance, moderation, patience",
     reversed: "Excess, lack of restraint, lack of self-control",
     astrology: "Sagittarius",
@@ -197,7 +197,7 @@ const tarotDeck = [
   {
     name: "The Devil",
     number: 15,
-    image: "src/assets/TarotDeck/TheDevil.png",
+    image: "https://i.imgur.com/D4wFdDH.png",
     meaning: "Addiction, materialism, control",
     reversed: "Freedom, release, liberation",
     astrology: "Saturn",
@@ -210,7 +210,7 @@ const tarotDeck = [
   {
     name: "The Tower",
     number: 16,
-    image: "src/assets/TarotDeck/theTower.png",
+    image: "https://i.imgur.com/iuEIFkj.png",
     meaning: "Sudden change, upheaval, revelation",
     reversed: "Sudden change averted, disruption avoided",
     astrology: "Mars",
@@ -223,7 +223,7 @@ const tarotDeck = [
   {
     name: "The Star",
     number: 17,
-    image: "src/assets/TarotDeck/TheStar.png",
+    image: "https://i.imgur.com/Or0mIXs.png",
     meaning: "Hope, renewal, inspiration",
     reversed: "Disappointment, despair, hopelessness",
     astrology: "Jupiter",
@@ -236,7 +236,7 @@ const tarotDeck = [
   {
     name: "The Moon",
     number: 18,
-    image: "src/assets/TarotDeck/TheMoon.png",
+    image: "https://i.imgur.com/PupTujb.png",
     meaning: "Illusions, fears, intuition",
     reversed: "Clarity, reassurance, lucidity",
     astrology: "Cancer",
@@ -249,7 +249,7 @@ const tarotDeck = [
   {
     name: "The Sun",
     number: 19,
-    image: "src/assets/TarotDeck/TheSun.png",
+    image: "blob:https://imgur.com/2bec9d47-b029-4f32-87fa-c4743f938054",
     meaning: "Happiness, success, fulfillment",
     reversed: "Depression, disappointment, blocked creativity",
     astrology: "Sun",
@@ -262,7 +262,7 @@ const tarotDeck = [
   {
     name: "Judgement",
     number: 20,
-    image: "src/assets/TarotDeck/Judgement.png",
+    image: "https://i.imgur.com/AteOoAM.png",
     meaning: "Awakening, rebirth, atonement",
     reversed: "Lack of self-awareness, missed opportunities",
     astrology: "Uranus",
@@ -275,7 +275,7 @@ const tarotDeck = [
   {
     name: "The World",
     number: 21,
-    image: "src/assets/TarotDeck/TheWorld.png",
+    image: "https://i.imgur.com/ZvIBzzx.png",
     meaning: "Completion, fulfillment, success",
     reversed: "Incompletion, lack of fulfillment, stagnation",
     astrology: "Saturn",
@@ -288,7 +288,7 @@ const tarotDeck = [
   {
     name: "Ace of Wands",
     number: 1,
-    image: "src/assets/TarotDeck/AceOfWands.png",
+    image: "https://i.imgur.com/VW9U5lT.png",
     meaning: "Creation, inspiration, new beginnings",
     reversed: "Lack of direction, stagnation, blocked creativity",
     astrology: "Aries",
@@ -301,7 +301,7 @@ const tarotDeck = [
   {
     name: "Two of Wands",
     number: 2,
-    image: "src/assets/TarotDeck/2ofWands.png",
+    image: "https://i.imgur.com/PKZuGwa.png",
     meaning: "Expansion, adventure, exploration",
     reversed: "Lack of direction, stagnation, blocked creativity",
     astrology: "Aries",
@@ -314,7 +314,7 @@ const tarotDeck = [
   {
     name: "Three of Wands",
     number: 3,
-    image: "src/assets/TarotDeck/3ofWands.png",
+    image: "https://i.imgur.com/P1g2Tjw.png",
     meaning: "Expansion, adventure, exploration",
     reversed: "Lack of direction, stagnation, blocked creativity",
     astrology: "Aries",
@@ -327,7 +327,7 @@ const tarotDeck = [
   {
     name: "Four of Wands",
     number: 4,
-    image: "src/assets/TarotDeck/4ofWands.png",
+    image: "https://i.imgur.com/AxzRXus.png",
     meaning: "Celebration, success, achievement",
     reversed: "Lack of celebration, stagnation, blocked creativity",
     astrology: "Aries",
@@ -340,7 +340,7 @@ const tarotDeck = [
   {
     name: "Five of Wands",
     number: 5,
-    image: "src/assets/TarotDeck/5ofWands.png",
+    image: "https://i.imgur.com/l6IjOHE.png",
     meaning: "Competition, conflict, struggle",
     reversed: "Lack of competition, stagnation, blocked creativity",
     astrology: "Aries",
@@ -353,7 +353,7 @@ const tarotDeck = [
   {
     name: "Six of Wands",
     number: 6,
-    image: "src/assets/TarotDeck/6ofWands.png",
+    image: "https://i.imgur.com/ICXEo6Q.png",
     meaning: "Victory, success, recognition",
     reversed: "Lack of recognition, stagnation, blocked creativity",
     astrology: "Aries",
@@ -366,7 +366,7 @@ const tarotDeck = [
   {
     name: "Seven of Wands",
     number: 7,
-    image: "src/assets/TarotDeck/7ofWands.png",
+    image: "https://i.imgur.com/0Vsn0S3.png",
     meaning: "Defending your position, standing your ground",
     reversed: "Lack of defense, stagnation, blocked creativity",
     astrology: "Aries",
@@ -379,7 +379,7 @@ const tarotDeck = [
   {
     name: "Eight of Wands",
     number: 8,
-    image: "src/assets/TarotDeck/8ofWands.png",
+    image: "https://i.imgur.com/BDiCpny.png",
     meaning: "Rapid action, progress, movement",
     reversed: "Lack of progress",
     astrology: "Aries",
@@ -392,7 +392,7 @@ const tarotDeck = [
   {
     name: "Nine of Wands",
     number: 9,
-    image: "src/assets/TarotDeck/9ofWands.png",
+    image: "https://i.imgur.com/uS6IqHK.png",
     meaning: "Defending your position, standing your ground",
     reversed: "Lack of defense, stagnation, blocked creativity",
     astrology: "Aries",
@@ -405,7 +405,7 @@ const tarotDeck = [
   {
     name: "Ten of Wands",
     number: 10,
-    image: "src/assets/TarotDeck/10ofWands.png",
+    image: "https://i.imgur.com/0iUbX7q.png",
     meaning: "Overwhelm, burden, responsibility",
     reversed: "Lack of responsibility, stagnation, blocked creativity",
     astrology: "Aries",
@@ -418,7 +418,7 @@ const tarotDeck = [
   {
     name: "Page of Wands",
     number: 11,
-    image: "src/assets/TarotDeck/PageOfWands.png",
+    image: "https://i.imgur.com/xCrekJM.png",
     meaning: "Enthusiasm, creativity, inspiration",
     reversed: "Lack of enthusiasm, stagnation, blocked creativity",
     astrology: "Aries",
@@ -431,7 +431,7 @@ const tarotDeck = [
   {
     name: "Knight of Wands",
     number: 12,
-    image: "src/assets/TarotDeck/KnightofWands.png",
+    image: "https://i.imgur.com/mzW55xF.png",
     meaning: "Action, passion, movement",
     reversed: "Lack of action, stagnation, blocked creativity",
     astrology: "Aries",
@@ -444,7 +444,7 @@ const tarotDeck = [
   {
     name: "Queen of Wands",
     number: 13,
-    image: "src/assets/TarotDeck/QueenofWands.png",
+    image: "https://i.imgur.com/K81T4Jr.png",
     meaning: "Passion, creativity, inspiration",
     reversed: "Lack of passion, stagnation, blocked creativity",
     astrology: "Aries",
@@ -457,7 +457,7 @@ const tarotDeck = [
   {
     name: "King of Wands",
     number: 14,
-    image: "src/assets/TarotDeck/KingofWands.png",
+    image: "https://i.imgur.com/EkJAKrk.png",
     meaning: "Passion, creativity, inspiration",
     reversed: "Lack of passion, stagnation, blocked creativity",
     astrology: "Aries",
@@ -470,7 +470,7 @@ const tarotDeck = [
   {
     name: "Ace of Cups",
     number: 1,
-    image: "src/assets/TarotDeck/AceofCups.png",
+    image: "https://i.imgur.com/YRSnXgq.png",
     meaning: "Love, compassion, creativity",
     reversed: "Lack of love, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -483,7 +483,7 @@ const tarotDeck = [
   {
     name: "Two of Cups",
     number: 2,
-    image: "src/assets/TarotDeck/2ofCups.png",
+    image: "https://i.imgur.com/uxDiKK8.png",
     meaning: "Love, compassion, creativity",
     reversed: "Lack of love, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -496,7 +496,7 @@ const tarotDeck = [
   {
     name: "Three of Cups",
     number: 3,
-    image: "src/assets/TarotDeck/3ofCups.png",
+    image: "https://i.imgur.com/5M8ZPHu.png",
     meaning: "Celebration, friendship, community",
     reversed: "Lack of celebration, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -509,7 +509,7 @@ const tarotDeck = [
   {
     name: "Four of Cups",
     number: 4,
-    image: "src/assets/TarotDeck/4ofCups.png",
+    image: "https://i.imgur.com/aOhQMYD.png",
     meaning: "Celebration, success, achievement",
     reversed: "Lack of celebration, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -522,7 +522,7 @@ const tarotDeck = [
   {
     name: "Five of Cups",
     number: 5,
-    image: "src/assets/TarotDeck/5ofCups.png",
+    image: "https://i.imgur.com/nZAsSIS.png",
     meaning: "Loss, grief, sadness",
     reversed: "Lack of loss, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -535,7 +535,7 @@ const tarotDeck = [
   {
     name: "Six of Cups",
     number: 6,
-    image: "src/assets/TarotDeck/6ofCups.png",
+    image: "https://i.imgur.com/Sv7vKPd.png",
     meaning: "Celebration, success, achievement",
     reversed: "Lack of celebration, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -548,7 +548,7 @@ const tarotDeck = [
   {
     name: "Seven of Cups",
     number: 7,
-    image: "src/assets/TarotDeck/7ofCups.png",
+    image: "https://i.imgur.com/6ZvZ2Y5.png",
     meaning: "Fantasy, imagination, creativity",
     reversed: "Lack of fantasy, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -561,7 +561,7 @@ const tarotDeck = [
   {
     name: "Eight of Cups",
     number: 8,
-    image: "src/assets/TarotDeck/8ofCups.png",
+    image: "https://i.imgur.com/IC0ykzn.png",
     meaning: "Rapid action, progress, movement",
     reversed: "Lack of progress, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -574,7 +574,7 @@ const tarotDeck = [
   {
     name: "Nine of Cups",
     number: 9,
-    image: "src/assets/TarotDeck/9ofCups.png",
+    image: "https://i.imgur.com/cKrwgG3.png",
     meaning: "Celebration, success, achievement",
     reversed: "Lack of celebration, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -587,7 +587,7 @@ const tarotDeck = [
   {
     name: "Ten of Cups",
     number: 10,
-    image: "src/assets/TarotDeck/10ofCups.png",
+    image: "https://i.imgur.com/FnFRe3U.png",
     meaning: "Celebration, success, achievement",
     reversed: "Lack of celebration, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -600,7 +600,7 @@ const tarotDeck = [
   {
     name: "Page of Cups",
     number: 11,
-    image: "src/assets/TarotDeck/PageofCups.png",
+    image: "https://i.imgur.com/pLoLlDu.png",
     meaning: "Imagination, creativity, inspiration",
     reversed: "Lack of imagination, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -613,7 +613,7 @@ const tarotDeck = [
   {
     name: "Knight of Cups",
     number: 12,
-    image: "src/assets/TarotDeck/KnightOfCups.png",
+    image: "https://i.imgur.com/WgovFU8.png",
     meaning: "Imagination, creativity, inspiration",
     reversed: "Lack of imagination, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -626,7 +626,7 @@ const tarotDeck = [
   {
     name: "Queen of Cups",
     number: 13,
-    image: "src/assets/TarotDeck/QueenOfCups.png",
+    image: "https://i.imgur.com/YGyYNOo.png",
     meaning: "Imagination, creativity, inspiration",
     reversed: "Lack of imagination, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -639,7 +639,7 @@ const tarotDeck = [
   {
     name: "King of Cups",
     number: 14,
-    image: "src/assets/TarotDeck/KingofCups.png",
+    image: "https://i.imgur.com/h85xD5q.png",
     meaning: "Imagination, creativity, inspiration",
     reversed: "Lack of imagination, stagnation, blocked creativity",
     astrology: "Cancer",
@@ -652,7 +652,7 @@ const tarotDeck = [
   {
     name: "Ace of Swords",
     number: 1,
-    image: "src/assets/TarotDeck/AceofSwords.png",
+    image: "https://i.imgur.com/FxNBvNT.png",
     meaning: "Truth, clarity, wisdom",
     reversed: "Lack of truth, stagnation, blocked creativity",
     astrology: "Libra",
@@ -665,7 +665,7 @@ const tarotDeck = [
   {
     name: "Two of Swords",
     number: 2,
-    image: "src/assets/TarotDeck/2ofSwords.png",
+    image: "https://i.imgur.com/Qnn4KNF.png",
     meaning: "Balance, harmony, peace",
     reversed: "Lack of balance, stagnation, blocked creativity",
     astrology: "Libra",
@@ -678,7 +678,7 @@ const tarotDeck = [
   {
     name: "Three of Swords",
     number: 3,
-    image: "src/assets/TarotDeck/3ofSwords.png",
+    image: "https://i.imgur.com/kArCmh6.png",
     meaning: "Heartbreak, sadness, grief",
     reversed: "Lack of heartbreak, stagnation, blocked creativity",
     astrology: "Libra",
@@ -691,7 +691,7 @@ const tarotDeck = [
   {
     name: "Four of Swords",
     number: 4,
-    image: "src/assets/TarotDeck/4ofSwords.png",
+    image: "https://i.imgur.com/srYP8ze.png",
     meaning: "Rest, relaxation, meditation",
     reversed: "Lack of rest, stagnation, blocked creativity",
     astrology: "Libra",
@@ -704,7 +704,7 @@ const tarotDeck = [
   {
     name: "Five of Swords",
     number: 5,
-    image: "src/assets/TarotDeck/5ofSwords.png",
+    image: "https://i.imgur.com/5kTvtbN.png",
     meaning: "Conflict, competition, struggle",
     reversed: "Lack of conflict, stagnation, blocked creativity",
     astrology: "Libra",
@@ -717,7 +717,7 @@ const tarotDeck = [
   {
     name: "Six of Swords",
     number: 6,
-    image: "src/assets/TarotDeck/6ofSwords.png",
+    image: "https://i.imgur.com/R9cN5FN.png",
     meaning: "Journey, travel, transition",
     reversed: "Lack of journey, stagnation, blocked creativity",
     astrology: "Libra",
@@ -730,7 +730,7 @@ const tarotDeck = [
   {
     name: "Seven of Swords",
     number: 7,
-    image: "src/assets/TarotDeck/7ofSwords.png",
+    image: "https://i.imgur.com/U7mMS2v.png",
     meaning: "Deception, trickery, manipulation",
     reversed: "Lack of deception, stagnation, blocked creativity",
     astrology: "Libra",
@@ -743,7 +743,7 @@ const tarotDeck = [
   {
     name: "Eight of Swords",
     number: 8,
-    image: "src/assets/TarotDeck/8ofSwords.png",
+    image: "https://i.imgur.com/P5ZkFxj.png",
     meaning: "Imprisonment, restriction, limitation",
     reversed: "Lack of imprisonment, stagnation, blocked creativity",
     astrology: "Libra",
@@ -756,7 +756,7 @@ const tarotDeck = [
   {
     name: "Nine of Swords",
     number: 9,
-    image: "src/assets/TarotDeck/9ofSwords.png",
+    image: "https://i.imgur.com/SRBGvs8.png",
     meaning: "Anxiety, worry, fear",
     reversed: "Lack of anxiety, stagnation, blocked creativity",
     astrology: "Libra",
@@ -769,7 +769,7 @@ const tarotDeck = [
   {
     name: "Ten of Swords",
     number: 10,
-    image: "src/assets/TarotDeck/10ofSwords.png",
+    image: "https://i.imgur.com/eDkvyiP.png",
     meaning: "Defeat, failure, loss",
     reversed: "Lack of defeat, stagnation, blocked creativity",
     astrology: "Libra",
@@ -782,7 +782,7 @@ const tarotDeck = [
   {
     name: "Page of Swords",
     number: 11,
-    image: "src/assets/TarotDeck/PageofSwords.png",
+    image: "https://i.imgur.com/1TjQbLM.png",
     meaning: "Truth, clarity, wisdom",
     reversed: "Lack of truth, stagnation, blocked creativity",
     astrology: "Libra",
@@ -795,7 +795,7 @@ const tarotDeck = [
   {
     name: "Knight of Swords",
     number: 12,
-    image: "src/assets/TarotDeck/KnightofSowrds.png",
+    image: "https://i.imgur.com/GFCQV1u.png",
     meaning: "Truth, clarity, wisdom",
     reversed: "Lack of truth, stagnation, blocked creativity",
     astrology: "Libra",
@@ -808,7 +808,7 @@ const tarotDeck = [
   {
     name: "Queen of Swords",
     number: 13,
-    image: "src/assets/TarotDeck/QueenOfSwords.png",
+    image: "https://i.imgur.com/bJUpIIi.png",
     meaning: "Truth, clarity, wisdom",
     reversed: "Lack of truth, stagnation, blocked creativity",
     astrology: "Libra",
@@ -821,7 +821,7 @@ const tarotDeck = [
   {
     name: "King of Swords",
     number: 14,
-    image: "src/assets/TarotDeck/KingOfSwords.png",
+    image: "https://i.imgur.com/Ra2cC03.png",
     meaning: "Truth, clarity, wisdom",
     reversed: "Lack of truth, stagnation, blocked creativity",
     astrology: "Libra",
@@ -834,7 +834,7 @@ const tarotDeck = [
   {
     name: "Ace of Pentacles",
     number: 1,
-    image: "src/assets/TarotDeck/AceofPentacles.png",
+    image: "https://i.imgur.com/FSsumdt.png",
     meaning: "Abundance, prosperity, wealth",
     reversed: "Lack of abundance, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -847,7 +847,7 @@ const tarotDeck = [
   {
     name: "Two of Pentacles",
     number: 2,
-    image: "src/assets/TarotDeck/2ofpentacleds.png",
+    image: "https://i.imgur.com/3VRc1u6.png",
     meaning: "Balance, harmony, peace",
     reversed: "Lack of balance, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -860,7 +860,7 @@ const tarotDeck = [
   {
     name: "Three of Pentacles",
     number: 3,
-    image: "src/assets/TarotDeck/3ofpentacles.png",
+    image: "https://i.imgur.com/mRPmJOT.png",
     meaning: "Collaboration, teamwork, partnership",
     reversed: "Lack of collaboration, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -873,7 +873,7 @@ const tarotDeck = [
   {
     name: "Four of Pentacles",
     number: 4,
-    image: "src/assets/TarotDeck/4ofpentacles.png",
+    image: "https://i.imgur.com/z7pJ62c.png",
     meaning: "Materialism, greed, hoarding",
     reversed: "Lack of materialism, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -886,7 +886,7 @@ const tarotDeck = [
   {
     name: "Five of Pentacles",
     number: 5,
-    image: "src/assets/TarotDeck/5ofpentacles.png",
+    image: "https://i.imgur.com/3noDxjv.png",
     meaning: "Poverty, scarcity, loss",
     reversed: "Lack of poverty, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -899,7 +899,7 @@ const tarotDeck = [
   {
     name: "Six of Pentacles",
     number: 6,
-    image: "src/assets/TarotDeck/6ofpentacleds.png",
+    image: "https://i.imgur.com/Ze3Upht.png",
     meaning: "Generosity, charity, giving",
     reversed: "Lack of generosity, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -912,7 +912,7 @@ const tarotDeck = [
   {
     name: "Seven of Pentacles",
     number: 7,
-    image: "src/assets/TarotDeck/7ofpentacles.png",
+    image: "https://i.imgur.com/B8C1Gha.png",
     meaning: "Hard work, patience, perseverance",
     reversed: "Lack of hard work, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -925,7 +925,7 @@ const tarotDeck = [
   {
     name: "Eight of Pentacles",
     number: 8,
-    image: "src/assets/TarotDeck/8ofpentacles.png",
+    image: "https://i.imgur.com/TRE46xO.png",
     meaning: "Hard work, patience, perseverance",
     reversed: "Lack of hard work, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -938,7 +938,7 @@ const tarotDeck = [
   {
     name: "Nine of Pentacles",
     number: 9,
-    image: "src/assets/TarotDeck/9ofpentacles.png",
+    image: "https://i.imgur.com/vi6TAeT.png",
     meaning: "Luxury, comfort, pleasure",
     reversed: "Lack of luxury, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -951,7 +951,7 @@ const tarotDeck = [
   {
     name: "Ten of Pentacles",
     number: 10,
-    image: "src/assets/TarotDeck/10ofpentacles.png",
+    image: "https://i.imgur.com/MOkos0Q.png",
     meaning: "Wealth, prosperity, abundance",
     reversed: "Lack of wealth, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -964,7 +964,7 @@ const tarotDeck = [
   {
     name: "Page of Pentacles",
     number: 11,
-    image: "src/assets/TarotDeck/PageOfPentacles.png",
+    image: "https://i.imgur.com/38vn0jI.png",
     meaning: "Wealth, prosperity, abundance",
     reversed: "Lack of wealth, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -977,7 +977,7 @@ const tarotDeck = [
   {
     name: "Knight of Pentacles",
     number: 12,
-    image: "src/assets/TarotDeck/KnightofPentacles.png",
+    image: "https://i.imgur.com/5Ex6u0W.png",
     meaning: "Wealth, prosperity, abundance",
     reversed: "Lack of wealth, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -990,7 +990,7 @@ const tarotDeck = [
   {
     name: "Queen of Pentacles",
     number: 13,
-    image: "src/assets/TarotDeck/QueenOfPentacles.png",
+    image: "https://i.imgur.com/Ws8seiJ.png",
     meaning: "Wealth, prosperity, abundance",
     reversed: "Lack of wealth, stagnation, blocked creativity",
     astrology: "Taurus",
@@ -1003,7 +1003,7 @@ const tarotDeck = [
   {
     name: "King of Pentacles",
     number: 14,
-    image: "src/assets/TarotDeck/KingofPentacles.png",
+    image: "https://i.imgur.com/pkjtC9A.png",
     meaning: "Wealth, prosperity, abundance",
     reversed: "Lack of wealth, stagnation, blocked creativity",
     astrology: "Taurus",

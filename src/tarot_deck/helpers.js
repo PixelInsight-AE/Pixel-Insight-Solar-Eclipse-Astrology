@@ -47,8 +47,8 @@ const loginUser = async () => {
     credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       user: {
-        username: "testUser",
-        email: "test@email.com",
+        username: "Emma-lou",
+        email: "emilyaaronlotz@email.com",
         password: "password",
       },
     }),
@@ -69,8 +69,8 @@ const logoutUser = async (user) => {
     credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       user: {
-        username: user.username,
-        password: user.password,
+        username: "Emma-lou",
+        password: "password",
       },
     }),
   })

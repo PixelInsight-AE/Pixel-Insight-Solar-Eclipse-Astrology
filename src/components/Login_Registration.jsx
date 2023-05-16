@@ -1,3 +1,5 @@
+//?? TODO: Registration component
+
 const Registration = () => {
   const [user, setUser] = useState({
     username: "",
@@ -10,11 +12,8 @@ const Registration = () => {
     e.preventDefault();
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-
   };
-  const handleSubmit = (e) => {
-    
-  };
+  const handleSubmit = (e) => {};
   return (
     <div className="registration">
       <form>
