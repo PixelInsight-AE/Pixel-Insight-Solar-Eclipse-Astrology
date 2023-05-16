@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-
+import { checkAuth } from "./tarot_deck/helpers";
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
 import "./App.scss";
 
 function App() {
   //const card = getCard(tarotDeck);
-  const [user, setUser] = React.useState({
+  const [state, setState] = React.useState({
     username: "",
-    email: "",
-    password: "",
+    isAuthenicated: false,
   }); // [state, setState
   const [cardOfTheDay, setCardOfTheDay] = React.useState({
     name: "The Fool",
@@ -34,8 +33,8 @@ function App() {
           <Home
             cardOfTheDay={cardOfTheDay}
             setCardOfTheDay={setCardOfTheDay}
-            user={user}
-            setUser={setUser}
+            state={state}
+            setState={setState}
           />
         }
       />

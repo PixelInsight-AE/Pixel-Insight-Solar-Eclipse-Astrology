@@ -1,9 +1,8 @@
-//?? TODO: Registration component
-
-const Registration = () => {
+import { useState, useEffect } from "react";
+import { checkAuth, loginUser } from "../tarot_deck/helpers";
+const Login = ({ setState, state }) => {
   const [user, setUser] = useState({
     username: "",
-    email: "",
     password: "",
     Errors: [],
   });
@@ -13,10 +12,22 @@ const Registration = () => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    loginUser(user);
+    setUser({
+      username: "",
+      password: "",
+      Errors: [],
+    });
+    setTimeout(() => {
+      checkAuth(setState);
+    }, 1000);
+  };
+
   return (
-    <div className="registration">
-      <form>
+    <div className="login">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="username"
@@ -25,21 +36,15 @@ const Registration = () => {
           placeholder="Username"
         />
         <input
-          type="email"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
-          placeholder="Email"
-        />
-        <input
           type="password"
           name="password"
           value={user.password}
           onChange={handleChange}
           placeholder="password"
         />
-        <button onSubmit={handleSubmit}>Send</button>
+        <button type="submit">Send</button>
       </form>
     </div>
   );
 };
+export { Login };

@@ -36,7 +36,7 @@ const createUser = async (user) => {
     });
 };
 
-const loginUser = async () => {
+const loginUser = async (user) => {
   console.log("loginUser");
 
   fetch("http://localhost:3333/sessions", {
@@ -47,9 +47,9 @@ const loginUser = async () => {
     credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       user: {
-        username: "Emma-lou",
-        email: "emilyaaronlotz@email.com",
-        password: "password",
+        username: user.username,
+        email: user.email,
+        password: user.password,
       },
     }),
   })
@@ -59,7 +59,7 @@ const loginUser = async () => {
     });
 };
 
-const logoutUser = async (user) => {
+const logoutUser = async (user, setState) => {
   console.log("logoutUser");
   fetch("http://localhost:3333/sessions", {
     method: "DELETE",
@@ -69,8 +69,8 @@ const logoutUser = async (user) => {
     credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       user: {
-        username: "Emma-lou",
-        password: "password",
+        username: user.username,
+        password: user.password,
       },
     }),
   })
@@ -80,7 +80,7 @@ const logoutUser = async (user) => {
     });
 };
 
-const checkAuth = async (user) => {
+const checkAuth = async (setState) => {
   console.log("checkAuth");
   fetch("http://localhost:3333/authenticated", {
     method: "GET",
@@ -88,16 +88,11 @@ const checkAuth = async (user) => {
       "Content-Type": "application/json",
     },
     credentials: "include", // <-- include credentials in request
-    data: {
-      user: {
-        username: user.username,
-        password: user.password,
-      },
-    },
   })
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      setState(data);
     });
 };
 

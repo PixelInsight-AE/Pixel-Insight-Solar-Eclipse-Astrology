@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { loginUser, logoutUser, createUser } from "../tarot_deck/helpers.js";
 
-const Header = ({ user, setUser }) => {
+const Header = ({ user, setUser, setState }) => {
   const handleChange = (e) => {
     e.preventDefault();
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -9,7 +9,12 @@ const Header = ({ user, setUser }) => {
   useEffect(() => {
     console.log(user);
   }, [user]);
-
+  const handleLogout = () => {
+    setState({
+      username: "",
+      isAuthenicated: false,
+    });
+  };
   return (
     <header>
       <div className="buttons-wrapper">
