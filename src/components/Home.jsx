@@ -22,11 +22,11 @@ const UserFeelingsAboutCard = () => {
   );
 };
 
-export default function Home({ cardOfTheDay, setCardOfTheDay }) {
+export default function Home({ cardOfTheDay, setCardOfTheDay, user, setUser }) {
   //console.log(cardOfTheDay);
   return (
     <div id="Home">
-      <Header />
+      <Header user={user} setUser={setUser} />
       <MessageBox />
       <CardOfTheDay
         cardOfTheDay={cardOfTheDay}

@@ -4,7 +4,7 @@ import { sendCardToBackend } from "./api.js";
 //TODO: Move into a parent component with a conditional render for either draw card or feeling buttons.
 const DrawCardButton = ({ cardOfTheDay, setIsCardDrawn }) => {
   const handleClick = (setIsCardDrawn) => {
-    // sendCardToBackend(cardOfTheDay);
+    sendCardToBackend(cardOfTheDay);
     setIsCardDrawn(true);
   };
 

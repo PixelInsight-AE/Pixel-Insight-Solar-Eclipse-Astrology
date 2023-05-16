@@ -7,7 +7,11 @@ import "./App.scss";
 
 function App() {
   //const card = getCard(tarotDeck);
-
+  const [user, setUser] = React.useState({
+    username: "",
+    email: "",
+    password: "",
+  }); // [state, setState
   const [cardOfTheDay, setCardOfTheDay] = React.useState({
     name: "The Fool",
     number: 0,
@@ -27,7 +31,12 @@ function App() {
       <Route
         path="/"
         element={
-          <Home cardOfTheDay={cardOfTheDay} setCardOfTheDay={setCardOfTheDay} />
+          <Home
+            cardOfTheDay={cardOfTheDay}
+            setCardOfTheDay={setCardOfTheDay}
+            user={user}
+            setUser={setUser}
+          />
         }
       />
       {/*       <Route path="/login" element={<Login />} />

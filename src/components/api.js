@@ -7,6 +7,7 @@ const sendCardToBackend = async (card) => {
       mode: "no-cors",
       "Content-Type": "application/json",
     },
+    credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       name_of_card: card.name,
       card_description: card.description,

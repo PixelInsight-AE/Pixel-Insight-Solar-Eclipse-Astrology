@@ -14,24 +14,7 @@ const getCardOfTheDay = async (todaysCard) => {
   todaysCard = data;
 };
 
-// const getCardOfTheDayFromBackend = async (setCardOfTheDay) => {
-//   const response = await fetch("http://localhost:3333/card_of_the_day", {
-//     method: "GET",
-//     headers: {
-//       mode: "no-cors",
-//       "Content-Type": "application/json",
-//     },
-//   });
-//   const data = await response.json();
-//   if (!response.ok) {
-//     throw new Error("Network response was not ok");
-//   } else {
-//     console.log(data);
-//     setCardOfTheDay(data);
-//   }
-// };
-
-const createUser = async () => {
+const createUser = async (user) => {
   console.log("createUser");
   fetch("http://localhost:3333/users", {
     method: "POST",
@@ -41,9 +24,9 @@ const createUser = async () => {
     credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       user: {
-        username: "testUser",
-        email: "test@email.com",
-        password: "password",
+        username: user.username,
+        email: user.email,
+        password: user.password,
       },
     }),
   })
@@ -76,7 +59,7 @@ const loginUser = async () => {
     });
 };
 
-const logoutUser = async () => {
+const logoutUser = async (user) => {
   console.log("logoutUser");
   fetch("http://localhost:3333/sessions", {
     method: "DELETE",
@@ -86,8 +69,8 @@ const logoutUser = async () => {
     credentials: "include", // <-- include credentials in request
     body: JSON.stringify({
       user: {
-        username: "testUser",
-        password: "password",
+        username: user.username,
+        password: user.password,
       },
     }),
   })
@@ -101,6 +84,10 @@ const checkAuth = async (user) => {
   console.log("checkAuth");
   fetch("http://localhost:3333/authenticated", {
     method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include", // <-- include credentials in request
     data: {
       user: {
         username: user.username,
