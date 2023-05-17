@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import { checkAuth } from "./tarot_deck/helpers";
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
+import { Registration } from "./components/Registration";
+import { UserCards } from "./components/UserCards";
 import "./App.scss";
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
   const [cardOfTheDay, setCardOfTheDay] = React.useState({
     name: "The Fool",
     number: 0,
-    image: "src/assets/TarotDeck/the fool.png",
+    image: "https://i.imgur.com/p79Yjzs.png",
     meaning: "New beginnings, adventure, opportunity",
     reversed: "Carelessness, recklessness, foolishness",
     astrology: "Aries",
@@ -37,6 +39,11 @@ function App() {
             setState={setState}
           />
         }
+      />
+      <Route path="/sign-up" element={<Registration />} />
+      <Route
+        path="/my-cards"
+        element={<UserCards state={state} setState={setState} />}
       />
       {/*       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} /> */}

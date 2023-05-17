@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 import {
   loginUser,
   logoutUser,
@@ -7,6 +9,7 @@ import {
 } from "../tarot_deck/helpers";
 
 const Registration = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -19,19 +22,17 @@ const Registration = () => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    createUser(user);
+    await createUser(user);
     setUser({
       username: "",
       email: "",
       password: "",
       Errors: [],
     });
+    navigate("/");
   };
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
 
   return (
     <div className="registration">
@@ -57,6 +58,7 @@ const Registration = () => {
           onChange={handleChange}
           placeholder="password"
         />
+
         <button type="submit">Send</button>
       </form>
     </div>

@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getCardOfTheDay } from "/src/tarot_deck/helpers.js";
+import { Link } from "react-router-dom";
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
 import "./Home.scss";
 import { Header } from "./Home_Header.jsx";
@@ -8,6 +9,7 @@ import { CardOfTheDay } from "./Home_CardOfTheDay.jsx";
 import { DrawCardOrShowFeeling } from "./Home_DrawCardOrShowFeeling.jsx";
 import { Registration } from "./Registration";
 import { Login } from "./Login";
+import { checkAuth, getRandomCard } from "../tarot_deck/helpers";
 console.log(tarotDeck.length);
 //TODO: make this a conditional render with the parent component of the draw card and feelings buttons
 const UserFeelingsAboutCard = () => {
@@ -30,6 +32,10 @@ export default function Home({
   state,
   setState,
 }) {
+  const [homeState, setHomeState] = useState({
+    showCardOfTheDay: false,
+    loginModal: false,
+  });
   const handleClick = () => {
     console.log("clicked");
     let i = 76;
@@ -64,12 +70,20 @@ export default function Home({
 
     sendRequest(); // start the recursive function
   };
-
+  useEffect(() => {
+    checkAuth(setState);
+  }, []);
   return (
     <div id="Home">
-      <Header setState={setState} />
-      <Login state={state} setState={setState} />
-      <Registration />
+      <Header
+        setState={setState}
+        homeState={homeState}
+        setHomeState={setHomeState}
+      />
+      {homeState.loginModal ? (
+        <Login setHomeState={setHomeState} homeState={homeState} />
+      ) : null}
+
       <MessageBox username={state.username} />
       <CardOfTheDay
         cardOfTheDay={cardOfTheDay}
@@ -77,6 +91,7 @@ export default function Home({
       />
       <DrawCardOrShowFeeling cardOfTheDay={cardOfTheDay} />
       <button onClick={handleClick}> POST ALL CARDS TO DB</button>
+      <Link to="/my-cards">My Cards</Link>
     </div>
   );
 }
