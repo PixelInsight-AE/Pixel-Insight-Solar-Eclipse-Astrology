@@ -40,9 +40,6 @@ const createUser = async (user, setState) => {
     }),
   });
   loginUser(user);
-  // .then((response) => response.json())
-  // .then((data) => {
-  // });
 };
 
 const getUsersCards = async (state, setUserCards) => {
