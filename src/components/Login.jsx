@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { checkAuth, loginUser } from "../tarot_deck/helpers";
-const Login = ({ setState, setHomeState, homeState }) => {
+const Login = ({ setState, state, setHomeState, homeState }) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -24,10 +24,6 @@ const Login = ({ setState, setHomeState, homeState }) => {
       ...homeState,
       loginModal: !homeState.loginModal,
     });
-
-    setTimeout(() => {
-      checkAuth(setState);
-    }, 1000);
   };
 
   return (

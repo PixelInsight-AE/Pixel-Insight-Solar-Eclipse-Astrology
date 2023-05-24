@@ -9,7 +9,7 @@ import { CardOfTheDay } from "./Home_CardOfTheDay.jsx";
 import { DrawCardOrShowFeeling } from "./Home_DrawCardOrShowFeeling.jsx";
 import { Registration } from "./Registration";
 import { Login } from "./Login";
-import { checkAuth, getRandomCard } from "../tarot_deck/helpers";
+import { checkAuth, getRandomCard, getCSRFToken } from "../tarot_deck/helpers";
 console.log(tarotDeck.length);
 //TODO: make this a conditional render with the parent component of the draw card and feelings buttons
 const UserFeelingsAboutCard = () => {
@@ -70,9 +70,14 @@ export default function Home({
 
     sendRequest(); // start the recursive function
   };
-  useEffect(() => {
-    checkAuth(setState);
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     await getCSRFToken();
+  //     // Other logic dependent on the CSRF token can be placed here
+  //   };
+
+  //   fetchData();
+  // }, []);
   return (
     <div id="Home">
       <Header
@@ -84,7 +89,7 @@ export default function Home({
         <Login setHomeState={setHomeState} homeState={homeState} />
       ) : null}
 
-      <MessageBox username={state.username} />
+      <MessageBox username={state.username} state={state} />
       <CardOfTheDay
         cardOfTheDay={cardOfTheDay}
         setCardOfTheDay={setCardOfTheDay}

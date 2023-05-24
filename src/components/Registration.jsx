@@ -31,6 +31,7 @@ const Registration = () => {
       password: "",
       Errors: [],
     });
+
     navigate("/");
   };
 

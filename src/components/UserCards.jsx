@@ -3,7 +3,7 @@ import { getUsersCards } from "../tarot_deck/helpers.js";
 import { Link } from "react-router-dom";
 const Card = ({ card }) => {
   return (
-    <div className="card">
+    <div key={card.id} className="card">
       <h1>{card.name_of_card}</h1>
       <h2>{card.meaning_up}</h2>
       <h2>{card.meaning_rev}</h2>
@@ -22,7 +22,7 @@ const UserCards = ({ state }) => {
   return (
     <div className="user-cards">
       {userCards.map((card) => {
-        return <Card key={card.id} card={card} />;
+        return <Card card={card} />;
       })}
 
       <Link to="/">Home</Link>
