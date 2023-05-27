@@ -37,6 +37,23 @@ $gradient-end: #2e3031;
       }
     }
   }
+  #Login {
+    margin-top: 1rem;
+
+    border-radius: 15px;
+    box-shadow: 0 0 10px 1px rgb(175, 173, 169);
+    padding: 2rem;
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      margin: 0.5rem;
+    }
+    button {
+      margin-top: 1rem;
+    }
+  }
 
   .message-box {
     h2 {

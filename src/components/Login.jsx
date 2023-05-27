@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { checkAuth, loginUser } from "../tarot_deck/helpers";
-const Login = ({ setState, state, setHomeState, homeState }) => {
+import { useNavigate } from "react-router-dom";
+
+const Login = () => {
+  const navigator = useNavigate();
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -12,23 +14,39 @@ const Login = ({ setState, state, setHomeState, homeState }) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const handleSubmit = (e) => {
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    loginUser(user);
+    const response = await fetch("http://localhost:3333/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: {
+          username: user.username,
+          password: user.password,
+        },
+      }),
+    });
+    const data = await response.json();
+    localStorage.setItem("sea-token", data.token);
+    localStorage.setItem("sea-username", data.user.username);
     setUser({
       username: "",
       password: "",
       Errors: [],
     });
-    setHomeState({
-      ...homeState,
-      loginModal: !homeState.loginModal,
-    });
+    navigator("/profile");
   };
 
   return (
-    <div className="login">
+    <div id="Login">
       <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
           name="username"
@@ -36,6 +54,8 @@ const Login = ({ setState, state, setHomeState, homeState }) => {
           onChange={handleChange}
           placeholder="Username"
         />
+        <label htmlFor="password">Password</label>
+
         <input
           type="password"
           name="password"
@@ -43,7 +63,7 @@ const Login = ({ setState, state, setHomeState, homeState }) => {
           onChange={handleChange}
           placeholder="password"
         />
-        <button type="submit">Send</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );

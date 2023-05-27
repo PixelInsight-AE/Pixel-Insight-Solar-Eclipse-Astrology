@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUsersCards } from "../tarot_deck/helpers.js";
+
 import { Link } from "react-router-dom";
 const Card = ({ card }) => {
   return (

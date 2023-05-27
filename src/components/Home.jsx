@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCardOfTheDay } from "/src/tarot_deck/helpers.js";
+
 import { Link } from "react-router-dom";
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
 import "./Home.scss";
@@ -9,8 +9,7 @@ import { CardOfTheDay } from "./Home_CardOfTheDay.jsx";
 import { DrawCardOrShowFeeling } from "./Home_DrawCardOrShowFeeling.jsx";
 import { Registration } from "./Registration";
 import { Login } from "./Login";
-import { checkAuth, getRandomCard, getCSRFToken } from "../tarot_deck/helpers";
-console.log(tarotDeck.length);
+
 //TODO: make this a conditional render with the parent component of the draw card and feelings buttons
 const UserFeelingsAboutCard = () => {
   return (
@@ -32,71 +31,55 @@ export default function Home({
   state,
   setState,
 }) {
-  const [homeState, setHomeState] = useState({
-    showCardOfTheDay: false,
-    loginModal: false,
-  });
-  const handleClick = () => {
-    console.log("clicked");
-    let i = 76;
+  // const handleClick = () => {
+  //   console.log("clicked");
+  //   let i = 0;
 
-    const sendRequest = () => {
-      if (i < 78) {
-        fetch("http://localhost:3333/tarot_deck", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name_of_card: tarotDeck[i].name,
-            card_description: tarotDeck[i].description,
-            card_image: tarotDeck[i].image,
-            meaning_rev: tarotDeck[i].reversed,
-            meaning_up: tarotDeck[i].meaning,
-            element: tarotDeck[i].element,
-            astrology: tarotDeck[i].astrology,
-            numerology: tarotDeck[i].number,
-            major_minor: tarotDeck[i].majorArcana,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            i++;
-            setTimeout(sendRequest, 1000); // recursive call with delay
-          });
-      }
-    };
-
-    sendRequest(); // start the recursive function
-  };
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     await getCSRFToken();
-  //     // Other logic dependent on the CSRF token can be placed here
+  //   const sendRequest = () => {
+  //     if (i < 78) {
+  //       fetch("http://localhost:3333/api/tarots", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           name: tarotDeck[i].name,
+  //           description: tarotDeck[i].description,
+  //           image_url: tarotDeck[i].image,
+  //           meaning_rev: tarotDeck[i].reversed,
+  //           meaning_up: tarotDeck[i].meaning,
+  //           element: tarotDeck[i].element,
+  //           astrology: tarotDeck[i].astrology,
+  //           numerology: tarotDeck[i].number,
+  //           major_minor: tarotDeck[i].majorArcana,
+  //         }),
+  //       })
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           console.log(data);
+  //           i++;
+  //           setTimeout(sendRequest, 500); // recursive call with delay
+  //         });
+  //     }
   //   };
 
-  //   fetchData();
-  // }, []);
+  //   sendRequest(); // start the recursive function
+  // };
+
   return (
     <div id="Home">
-      <Header
-        setState={setState}
-        homeState={homeState}
-        setHomeState={setHomeState}
-      />
-      {homeState.loginModal ? (
-        <Login setHomeState={setHomeState} homeState={homeState} />
-      ) : null}
+      <Header />
 
-      <MessageBox username={state.username} state={state} />
+      <Login />
+
+      {/* <MessageBox state={state} />
       <CardOfTheDay
         cardOfTheDay={cardOfTheDay}
         setCardOfTheDay={setCardOfTheDay}
       />
       <DrawCardOrShowFeeling cardOfTheDay={cardOfTheDay} />
       <button onClick={handleClick}> POST ALL CARDS TO DB</button>
-      <Link to="/my-cards">My Cards</Link>
+      <Link to="/my-cards">My Cards</Link> */}
     </div>
   );
 }

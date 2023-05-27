@@ -1,10 +1,11 @@
 //TODO: display messages from backend particularry a random greeting with the users name
 import { useEffect } from "react";
 
-const MessageBox = ({ username, state }) => {
-  useEffect(() => {
-    console.log("Message Box Mounted");
-  }, [state]);
+const MessageBox = ({ state }) => {
+  const username = localStorage.getItem("sea-username")
+    ? localStorage.getItem("sea-username")
+    : "Guest";
+  useEffect(() => {}, [state]);
 
   return (
     <div className="message-box">

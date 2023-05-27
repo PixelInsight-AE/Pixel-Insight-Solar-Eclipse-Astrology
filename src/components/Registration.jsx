@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
+import { createUser } from "../tarot_deck/helpers";
 import { useNavigate } from "react-router-dom";
-import {
-  loginUser,
-  logoutUser,
-  checkAuth,
-  createUser,
-} from "../tarot_deck/helpers";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -31,8 +26,7 @@ const Registration = () => {
       password: "",
       Errors: [],
     });
-
-    navigate("/");
+    navigate("/profile");
   };
 
   return (
@@ -62,6 +56,8 @@ const Registration = () => {
 
         <button type="submit">Send</button>
       </form>
+
+      <Link to="/">Home</Link>
     </div>
   );
 };
