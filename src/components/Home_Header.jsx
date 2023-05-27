@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Registration } from "./Registration.jsx";
 
 const Header = ({ user, setUser, homeState, setHomeState }) => {
+  const currentUser = localStorage.getItem("sea-username");
   const navigator = useNavigate();
   const logOutUser = () => {
     localStorage.removeItem("sea-username");
@@ -23,6 +24,9 @@ const Header = ({ user, setUser, homeState, setHomeState }) => {
         <button className="logout-button" onClick={logOutUser}>
           logout
         </button>
+      </div>
+      <div>
+        <h2>{currentUser}</h2>
       </div>
     </header>
   );

@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
 import { Registration } from "./components/Registration";
-import { UserCards } from "./components/UserCards";
+
 import { Profile } from "./components/Profile";
+import { MyCards } from "./components/MyCards";
 import "./App.scss";
 
 function App() {
@@ -42,10 +43,7 @@ function App() {
         }
       />
       <Route path="/sign-up" element={<Registration />} />
-      <Route
-        path="/my-cards"
-        element={<UserCards state={state} setState={setState} />}
-      />
+      <Route path="/my-cards" element={<MyCards />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
   );
