@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sendCardToBackend } from "./api.js";
+import { sendCardToBackend } from "../api.js";
 
 //TODO: Move into a parent component with a conditional render for either draw card or feeling buttons.
 const DrawCardButton = ({ cardOfTheDay, setIsCardDrawn }) => {

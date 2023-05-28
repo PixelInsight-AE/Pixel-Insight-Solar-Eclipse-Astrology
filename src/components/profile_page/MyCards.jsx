@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "./Home_Header";
+import { Header } from "../landing_page/Home_Header";
 const MyCards = () => {
   const [allCards, setAllCards] = useState([]);
   const currentUser = localStorage.getItem("sea-username");
@@ -19,7 +19,6 @@ const MyCards = () => {
 
   return (
     <div className="container">
-      <Header />
       <h1>{currentUser}'s cards</h1>
       {allCards.map((card) => {
         <div className="card">

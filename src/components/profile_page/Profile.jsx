@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "./Home_Header";
-import { CardOfTheDay } from "./Home_CardOfTheDay";
-import { DrawCardOrShowFeeling } from "./Home_DrawCardOrShowFeeling";
+import { ProfileHeader } from "./Profile_Header";
+import { CardOfTheDay } from "./CardOfTheDay";
+import { DrawCardOrShowFeeling } from "./DrawCardOrShowFeeling";
+import { logoutUser } from "../../tarot_deck/helpers";
+import "./Profile.scss";
 
 const Profile = () => {
   const user = localStorage.getItem("sea-username");
+  const [isCardDrawn, setIsCardDrawn] = useState(false);
   const [cardOfTheDay, setCardOfTheDay] = useState({
     name: "",
     description: "",
@@ -21,14 +24,17 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    const response = fetch("http://localhost:3333/api/random")
+    const response = fetch("http://localhost:3333/api/card_of_the_day")
       .then((response) => response.json())
-      .then((data) => setCardOfTheDay(data));
+      .then((data) => {
+        console.log(data);
+        setCardOfTheDay(data);
+      });
   }, []);
 
   return (
-    <div className="profile">
-      <Header />
+    <div id="Profile">
+      <ProfileHeader />
 
       <CardOfTheDay cardOfTheDay={cardOfTheDay} />
       <DrawCardOrShowFeeling />

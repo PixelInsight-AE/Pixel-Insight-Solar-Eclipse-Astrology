@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { Registration } from "./Registration.jsx";
+import { Registration } from "../sign_up_page/Registration.jsx";
 
-const Header = ({ user, setUser, homeState, setHomeState }) => {
+const Header = () => {
   const currentUser = localStorage.getItem("sea-username");
   const navigator = useNavigate();
   const logOutUser = () => {
@@ -11,6 +11,12 @@ const Header = ({ user, setUser, homeState, setHomeState }) => {
     localStorage.removeItem("sea-token");
     navigator("/");
   };
+  useEffect(() => {
+    if (currentUser) {
+      navigator("/profile");
+    }
+  }, [currentUser, navigator]);
+
   return (
     <header>
       <div className="buttons-wrapper">
@@ -20,10 +26,11 @@ const Header = ({ user, setUser, homeState, setHomeState }) => {
             Sign Up
           </Link>
         </button>
-
-        <button className="logout-button" onClick={logOutUser}>
-          logout
-        </button>
+        {currentUser ? (
+          <button className="logout-button" onClick={logOutUser}>
+            logout
+          </button>
+        ) : null}
       </div>
       <div>
         <h2>{currentUser}</h2>
