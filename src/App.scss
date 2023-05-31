@@ -1,8 +1,125 @@
 // reset
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "/src/index.scss";
+#navbar {
+  height: 10vh;
+  @include flex(row, space-between, center);
+  background: $primary;
+  h1 {
+    color: $white;
+    @include padding-x(2rem);
+  }
+  form {
+    @include flex(row, space-between, center);
+    @include padding-x(2rem);
+    input {
+      @include margin-x(0.5rem);
+      @include padding-x(0.25rem);
+      @include padding-y(0.5rem);
+      border-radius: calc($base-border-radius / 3);
+      border: none;
+      outline: none;
+    }
+    button {
+      @include button($secondary);
+    }
+  }
+}
+
+@mixin radial-gradient($start, $end) {
+  background: radial-gradient(circle at center, $gradient-start, $gradient-end);
+}
+$gradient-start: #1d1f20;
+$gradient-end: #2e3031;
+
+#Login {
+  height: 85vh;
+  width: 100%;
+  @include radial-gradient($gradient-start, $gradient-end);
+  @include flex(column, center, center);
+  //border-radius: $base-border-radius;
+  .error-messages {
+    color: $error;
+    font-size: 8px;
+  }
+  form {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(255, 196, 0, 0.4);
+    @include form();
+    color: $black;
+    label {
+      color: white;
+    }
+    button {
+      @include button($secondary);
+    }
+    p {
+      @include padding-y(0.5rem);
+      color: $white;
+      font-size: 12px;
+    }
+    span {
+      @include padding-x(0.5rem);
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}
+
+#SignUp {
+  height: 85vh;
+  width: 100%;
+  @include radial-gradient($gradient-start, $gradient-end);
+  @include flex(column, center, center);
+  //border-radius: $base-border-radius;
+  #card-wrapper {
+    @include flex(row, space-between, center);
+    background-color: $neutral2;
+    width: 350px;
+    height: 550px;
+    border: 1px solid $primary;
+    border-radius: $base-border-radius;
+    box-shadow: 0 0 10px rgba(255, 196, 0, 0.4);
+  }
+  form {
+    @include radial-gradient($gradient-start, $gradient-end);
+    border: 1px solid $secondary;
+    width: 300px;
+    height: 500px;
+    @include form();
+    color: $black;
+    label {
+      color: white;
+    }
+    button {
+      @include button($secondary);
+    }
+    p {
+      @include padding-y(0.5rem);
+      color: $white;
+      font-size: 12px;
+    }
+    span {
+      @include padding-x(0.5rem);
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+  #errors {
+    height: 5vh;
+    color: $error;
+    border: 1px solid $error;
+    border-radius: calc($base-border-radius / 3);
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+footer {
+  height: 5vh;
+  background: $primary;
+  @include flex(row, flex-start, center);
+  @include padding-x(2rem);
 }
 
 // flexbox mixin direction, justify, align
@@ -11,8 +128,4 @@
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
-}
-
-@mixin radial-gradient($start, $end) {
-  background: radial-gradient(circle at center, $gradient-start, $gradient-end);
 }

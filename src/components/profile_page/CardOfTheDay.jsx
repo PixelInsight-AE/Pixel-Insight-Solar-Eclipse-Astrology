@@ -1,5 +1,5 @@
 // TODO: Make conditional render for back of card, and front of card when card is drawn
-const CardOfTheDay = ({ cardOfTheDay }) => {
+const CardOfTheDay = ({ cardOfTheDay, handleModalClick }) => {
   // TODO: Move to api.js or similar
   // const fetchCardOfTheDay = async () => {
   //   const response = await fetch("http://localhost:3333/card_of_the_day");
@@ -22,9 +22,10 @@ const CardOfTheDay = ({ cardOfTheDay }) => {
   // };
 
   return (
-    <div className="card-of-the-day">
-      <img src={cardOfTheDay.image_url} alt={cardOfTheDay.name} />
-      <h3>{cardOfTheDay.meaning}</h3>
+    <div onClick={handleModalClick} className="card-of-the-day">
+      {cardOfTheDay ? (
+        <img src={cardOfTheDay.image_url} alt={cardOfTheDay.name} />
+      ) : null}
     </div>
   );
 };

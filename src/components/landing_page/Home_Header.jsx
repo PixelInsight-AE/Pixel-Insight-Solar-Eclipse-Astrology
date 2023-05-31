@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-import { Registration } from "../sign_up_page/Registration.jsx";
+import { useSelector } from "react-redux";
+//import { Registration } from "../sign_up_page/Registration.jsx";
 
 const Header = () => {
+  const user = useSelector((state) => state.auth.user);
   const currentUser = localStorage.getItem("sea-username");
   const navigator = useNavigate();
   const logOutUser = () => {
@@ -33,7 +34,7 @@ const Header = () => {
         ) : null}
       </div>
       <div>
-        <h2>{currentUser}</h2>
+        <h2>{user}</h2>
       </div>
     </header>
   );

@@ -1,0 +1,61 @@
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// Define classes for different column widths
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 percentage(($i / 12));
+    max-width: percentage(($i / 12));
+  }
+}
+// Mixin for creating responsive breakpoints
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+// breakpoint variables
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+@each $breakpoint, $value in $breakpoints {
+  @if $breakpoint == xs {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage(($i / 12));
+        max-width: percentage(($i / 12));
+      }
+    }
+  } @else {
+    @include breakpoint($value) {
+      @for $i from 1 through 12 {
+        .col-#{$breakpoint}-#{$i} {
+          flex: 0 0 percentage(($i / 12));
+          max-width: percentage(($i / 12));
+        }
+      }
+    }
+  }
+}

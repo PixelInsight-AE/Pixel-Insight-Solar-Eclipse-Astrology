@@ -1,0 +1,387 @@
+// form mixin including styles for the form itself, inputs and labels
+@mixin form() {
+  @include flex(column, center, center);
+  padding: $base-padding;
+  margin: $base-margin;
+  border-radius: $base-border-radius;
+  input {
+    margin: $base-margin;
+    padding: calc(#{$base-padding} / 2);
+    border-radius: calc(#{$base-border-radius} / 2);
+  }
+  button {
+    @include button($success);
+  }
+}
+
+@mixin padding-x($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin padding-y($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+@mixin margin-x($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin margin-y($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin button($bg-color) {
+  @include font("Poppins", 1rem, 600);
+  @include padding-x(1rem);
+  @include padding-y(0.5rem);
+  @include margin-x(0.5rem);
+  @include margin-y(0.5rem);
+  border: none;
+  border-radius: 0.25rem;
+  background-color: $bg-color;
+  color: $white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Mixin for setting font properties
+@mixin font(
+  $font-family,
+  $font-size,
+  $font-weight: normal,
+  $line-height: normal
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+/* // Mixin for creating responsive container styles
+@mixin container($max-width: 1200px, $padding-x: 15px) {
+  max-width: $max-width;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+// Mixin for clearfix (clearing floats)
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* // Mixin for creating responsive grid columns
+@mixin column($width) {
+  flex: 0 0 $width;
+  max-width: $width;
+} */
+
+// Mixin for creating box shadows
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Mixin for creating transitions
+@mixin transition($properties, $duration: 0.3s, $timing-function: ease) {
+  transition: $properties $duration $timing-function;
+}
+
+// Mixin for setting text ellipsis
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Mixin for creating responsive utility classes
+@mixin utility($class-name, $property, $value) {
+  .#{$class-name} {
+    #{$property}: $value;
+  }
+}
+
+// Mixin for background image
+@mixin background-image($image-url) {
+  background-image: url($image-url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+// Mixin for creating a gradient background
+@mixin gradient-background($start-color, $end-color) {
+  background: $start-color;
+  background: linear-gradient(to bottom, $start-color, $end-color);
+}
+
+// Mixin for creating responsive text styles
+@mixin responsive-text($sizes) {
+  @each $breakpoint, $size in $sizes {
+    @include breakpoint($breakpoint) {
+      font-size: $size;
+    }
+  }
+}
+
+// Mixin for creating a gradient background
+@mixin gradient-background($start-color, $end-color) {
+  background: $start-color;
+  background: linear-gradient(to bottom, $start-color, $end-color);
+}
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// Mixin for creating responsive padding
+@mixin responsive-padding($padding) {
+  @each $breakpoint, $value in $breakpoints {
+    @if map-has-key($padding, $breakpoint) {
+      @include breakpoint($breakpoint) {
+        padding: map-get($padding, $breakpoint);
+      }
+    }
+  }
+}
+
+// Mixin for creating a hover effect
+@mixin hover-effect($property, $value) {
+  &:hover {
+    #{$property}: $value;
+  }
+}
+
+// Mixin for creating a neon text effect
+@mixin neon-text($color, $glow-color, $glow-size) {
+  color: $color;
+  text-shadow: 0 0 $glow-size $glow-color;
+}
+
+// Mixin for creating a flip card
+@mixin flip-card($front-bg, $back-bg, $width, $height) {
+  position: relative;
+  width: $width;
+  height: $height;
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .card-front {
+    background-color: $front-bg;
+    z-index: 2;
+  }
+
+  .card-back {
+    background-color: $back-bg;
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+
+  &:hover {
+    .card-front {
+      transform: rotateY(180deg);
+    }
+
+    .card-back {
+      transform: rotateY(0);
+    }
+  }
+}
+
+// Mixin for creating a pulse animation
+@mixin pulse-animation($size, $color) {
+  animation: pulse-animation 1.5s infinite;
+
+  @keyframes pulse-animation {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 $color;
+    }
+    70% {
+      transform: scale(1.2);
+      box-shadow: 0 0 0 $size $color;
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 $color;
+    }
+  }
+}
+
+// Mixin for creating a particle background effect
+@mixin particle-background($particle-color, $particle-size, $particle-count) {
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @for $i from 1 through $particle-count {
+      $x: random(100);
+      $y: random(100);
+      $delay: random(10) / 10s;
+
+      &.particle-#{$i} {
+        position: absolute;
+        top: $y + vw;
+        left: $x + vw;
+        width: $particle-size;
+        height: $particle-size;
+        background-color: $particle-color;
+        opacity: 0;
+        animation: particle-float 5s infinite linear;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  @keyframes particle-float {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-100vh);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200vh);
+    }
+  }
+}
+
+@mixin rotating-border($duration, $color, $border-width) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: $border-width solid $color;
+    border-radius: 50%;
+    animation: rotating-border-animation $duration linear infinite;
+  }
+
+  @keyframes rotating-border-animation {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// Mixin for standard Bootstrap button
+@mixin bootstrap-button(
+  $background-color,
+  $text-color,
+  $hover-background-color,
+  $hover-text-color,
+  $size: ""
+) {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  font-size: $size;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  color: $text-color;
+  background-color: $background-color;
+  border-color: $background-color;
+
+  &:hover {
+    color: $hover-text-color;
+    background-color: $hover-background-color;
+    border-color: $hover-background-color;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+}
+
+// Mixin for lighten version of Bootstrap button
+@mixin lighten-bootstrap-button(
+  $background-color,
+  $text-color,
+  $hover-background-color,
+  $hover-text-color,
+  $size: ""
+) {
+  @include bootstrap-button(
+    lighten($background-color, 10%),
+    $text-color,
+    lighten($hover-background-color, 10%),
+    $hover-text-color,
+    $size
+  );
+}
+
+// Mixin for darken version of Bootstrap button
+@mixin darken-bootstrap-button(
+  $background-color,
+  $text-color,
+  $hover-background-color,
+  $hover-text-color,
+  $size: ""
+) {
+  @include bootstrap-button(
+    darken($background-color, 10%),
+    $text-color,
+    darken($hover-background-color, 10%),
+    $hover-text-color,
+    $size
+  );
+}

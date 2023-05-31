@@ -1,67 +1,22 @@
 import React, { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
 import { tarotDeck } from "/src/tarot_deck/tarot_deck.js";
 import "./Home.scss";
 import { Header } from "./Home_Header.jsx";
-
 import { Login } from "./Login";
-
+import { SignUp } from "../sign_up_page/Sign_up";
+import { useSelector, useDispatch } from "react-redux";
+import { counterActions } from "../../store/counter";
+import { authActions } from "../../store/auth";
 //TODO: make this a conditional render with the parent component of the draw card and feelings buttons
-// const UserFeelingsAboutCard = () => {
-//   return (
-//     /* Form for collecting user feelings about their card of the day to send of to the backend */
-//     <div className="user-feelings-about-card">
-//       <h2>How did you feel about your card of the day?</h2>
-//       <form>
-//         <label htmlFor="userFeelings">User Feelings</label>
-//         <input type="text" id="userFeelings" name="userFeelings" />
-//         <input type="submit" value="Submit" />
-//       </form>
-//     </div>
-//   );
-// };
 
-export default function Home({}) {
-  // const handleClick = () => {
-  //   console.log("clicked");
-  //   let i = 0;
-
-  //   const sendRequest = () => {
-  //     if (i < 78) {
-  //       fetch("http://localhost:3333/api/tarots", {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify({
-  //           name: tarotDeck[i].name,
-  //           description: tarotDeck[i].description,
-  //           image_url: tarotDeck[i].image,
-  //           meaning_rev: tarotDeck[i].reversed,
-  //           meaning_up: tarotDeck[i].meaning,
-  //           element: tarotDeck[i].element,
-  //           astrology: tarotDeck[i].astrology,
-  //           numerology: tarotDeck[i].number,
-  //           major_minor: tarotDeck[i].majorArcana,
-  //         }),
-  //       })
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //           console.log(data);
-  //           i++;
-  //           setTimeout(sendRequest, 500); // recursive call with delay
-  //         });
-  //     }
-  //   };
-
-  //   sendRequest(); // start the recursive function
-  // };
+export default function Home() {
+  //!! function to load the tarot deck into the database is in the api.js file
 
   return (
     <div id="Home">
-      <Header />
-      <Login />
+      {/* <Login /> */}
+      <SignUp />
     </div>
   );
 }

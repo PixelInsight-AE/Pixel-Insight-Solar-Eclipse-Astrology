@@ -1,0 +1,45 @@
+@import "/src/index.scss";
+@mixin radial-gradient($start, $end) {
+  background: radial-gradient(circle at center, $gradient-start, $gradient-end);
+}
+$gradient-start: #1d1f20;
+$gradient-end: #2e3031;
+
+#MyCards {
+  @include radial-gradient($gradient-start, $gradient-end);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  #users-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: scroll;
+    width: 100%;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 1rem;
+    img {
+      border: 1px solid goldenrod;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 5px goldenrod;
+      width: 200px;
+      object-fit: cover;
+    }
+    h3 {
+      font-family: "Marck Script", cursive;
+      font-size: 1.25rem;
+      text-align: center;
+      color: whitesmoke;
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
+}

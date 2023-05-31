@@ -1,0 +1,18 @@
+// Mixin for flexbox container
+@mixin flex(
+  $direction: row,
+  $justify-content: flex-start,
+  $align-items: flex-start
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// Mixin for flexbox item
+@mixin flex-item($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto) {
+  flex-grow: $flex-grow;
+  flex-shrink: $flex-shrink;
+  flex-basis: $flex-basis;
+}

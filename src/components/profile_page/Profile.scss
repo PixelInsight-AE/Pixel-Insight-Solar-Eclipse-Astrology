@@ -1,11 +1,15 @@
+@mixin radial-gradient($start, $end) {
+  background: radial-gradient(circle at center, $gradient-start, $gradient-end);
+}
+$gradient-start: #1d1f20;
+$gradient-end: #2e3031;
+
 #Profile {
+  @include radial-gradient($gradient-start, $gradient-end);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(ellipse at center, #ffffff 0%, #4d4949 100%);
-  #registration-header {
-    border-bottom: #ffffff 1px solid;
-  }
+
   img {
     width: 200px;
     height: 400px;

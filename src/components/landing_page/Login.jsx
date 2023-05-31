@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Login.scss";
+import { useNavigate, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store/auth";
 const Login = () => {
+  const dispatch = useDispatch();
   const navigator = useNavigate();
   const [user, setUser] = useState({
     username: "",
@@ -32,9 +35,6 @@ const Login = () => {
     }));
   };
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:3333/api/login", {
@@ -50,8 +50,10 @@ const Login = () => {
       }),
     });
     const data = await response.json();
+    //console.log(data);
     localStorage.setItem("sea-token", data.token);
     localStorage.setItem("sea-username", data.user.username);
+    //dispatch(authActions.setUser(data.user.username));
     setUser({
       username: "",
       password: "",
@@ -74,6 +76,7 @@ const Login = () => {
           onChange={handleChange}
           placeholder="Username"
           required={true}
+          autoComplete="on"
         />
         <label htmlFor="password">Password</label>
         <span className="error-messages">{user.errors.password}</span>
@@ -84,8 +87,15 @@ const Login = () => {
           onChange={handleChange}
           placeholder="password"
           required={true}
+          autoComplete="on"
         />
         <button type="submit">Login</button>
+        <p>
+          Don't have an account yet?
+          <Link to="/sign-up">
+            <span>SignUp</span>
+          </Link>
+        </p>
       </form>
     </div>
   );

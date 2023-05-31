@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import { ProfileHeader } from "./Profile_Header";
 import { CardOfTheDay } from "./CardOfTheDay";
 import { DrawCardOrShowFeeling } from "./DrawCardOrShowFeeling";
-import { logoutUser } from "../../tarot_deck/helpers";
+import { useAuth } from "../../hooks/useAuth";
+
 import "./Profile.scss";
+import CardOfTheDayModal from "./CardOfTheDayModal";
 
 const Profile = () => {
+  const { logout, getLoginCard, isAuthenticated } = useAuth();
   const user = localStorage.getItem("sea-username");
   const [isCardDrawn, setIsCardDrawn] = useState(false);
+  const [isCardModalOpen, setIsCardModalOpen] = useState(false);
   const [cardOfTheDay, setCardOfTheDay] = useState({
     name: "",
     description: "",
@@ -21,23 +25,47 @@ const Profile = () => {
     major_minor: "",
     user_thoughts: "",
     user_feelings: null,
+    id: null,
   });
 
   useEffect(() => {
-    const response = fetch("http://localhost:3333/api/card_of_the_day")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setCardOfTheDay(data);
-      });
+    // const token = localStorage.getItem("sea-token");
+    // const response = fetch("http://localhost:3333/api/card_of_the_day", {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setCardOfTheDay(data);
+    //   });
+    getLoginCard().then((data) => {
+      setCardOfTheDay(data);
+    });
   }, []);
+
+  const handleModalClick = () => {
+    setIsCardModalOpen(!isCardModalOpen);
+  };
 
   return (
     <div id="Profile">
       <ProfileHeader />
 
-      <CardOfTheDay cardOfTheDay={cardOfTheDay} />
-      <DrawCardOrShowFeeling />
+      {!isCardModalOpen ? (
+        <CardOfTheDay
+          cardOfTheDay={cardOfTheDay}
+          handleModalClick={handleModalClick}
+        />
+      ) : (
+        <CardOfTheDayModal
+          cardOfTheDay={cardOfTheDay}
+          handleModalClick={handleModalClick}
+        />
+      )}
+      <DrawCardOrShowFeeling cardOfTheDay={cardOfTheDay} />
 
       <Link to="/my-cards">My Cards</Link>
     </div>

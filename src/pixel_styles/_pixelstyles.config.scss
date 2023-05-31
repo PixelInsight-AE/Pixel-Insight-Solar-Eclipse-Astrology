@@ -1,0 +1,56 @@
+// todo: here will go all the key variables to be used in the mixin library
+// ? this is to be imported after the base for css reset
+/* Colors */
+$primary: #c28500dc;
+$secondary: #1aaec8;
+
+$accent1: #4ecdc4;
+$accent2: #ffc107;
+$accent3: #f94144;
+
+$neutral1: #f8f9fa;
+$neutral2: #343a40;
+
+$error: #d32752;
+$warning: #f6c31c;
+$info: #17a2b8;
+$success: #28a745;
+
+$black: #000;
+$white: #fff;
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent1": $accent1,
+  "accent2": $accent2,
+  "accent3": $accent3,
+  "error": $error,
+  "warning": $warning,
+  "info": $info,
+  "success": $success,
+  "black": $black,
+  "white": $white,
+) !default;
+
+/* Typography */
+/* Spacing */
+/* Breakpoints */
+
+$base-padding: 0.75rem; // margin and padding
+$base-margin: 0.75rem;
+
+$base-border-radius: 10px; // borders
+$base-border-width: 1px;
+
+$base-font-size: 1rem; // typography
+$font-size-xs: $base-font-size * 0.5;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-md: $base-font-size * 1.25;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+
+$base-transition: 0.3s; // transitions
+
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1); // shadows
