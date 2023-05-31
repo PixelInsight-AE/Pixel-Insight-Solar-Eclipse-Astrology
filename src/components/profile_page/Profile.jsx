@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ProfileHeader } from "./Profile_Header";
+
 import { CardOfTheDay } from "./CardOfTheDay";
 import { DrawCardOrShowFeeling } from "./DrawCardOrShowFeeling";
 import { useAuth } from "../../hooks/useAuth";
@@ -52,8 +52,6 @@ const Profile = () => {
 
   return (
     <div id="Profile">
-      <ProfileHeader />
-
       {!isCardModalOpen ? (
         <CardOfTheDay
           cardOfTheDay={cardOfTheDay}

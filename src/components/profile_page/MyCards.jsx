@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "../landing_page/Home_Header";
+
 import "./MyCards.scss";
 const MyCards = () => {
   const [allCards, setAllCards] = useState([]);
@@ -22,7 +22,6 @@ const MyCards = () => {
 
   return (
     <div id="MyCards">
-      <h1>{currentUser}'s cards</h1>
       <div id="users-cards">
         {allCards.map((card) => {
           return (

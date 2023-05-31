@@ -47,7 +47,6 @@ const useAuth = () => {
   };
 
   const getLoginCard = () => {
-    const token = localStorage.getItem("sea-token");
     return fetchCardOfTheDay();
   };
 

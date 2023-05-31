@@ -1,3 +1,4 @@
+@import "/src/index.scss";
 @mixin radial-gradient($start, $end) {
   background: radial-gradient(circle at center, $gradient-start, $gradient-end);
 }
@@ -6,13 +7,46 @@ $gradient-end: #2e3031;
 
 #Profile {
   @include radial-gradient($gradient-start, $gradient-end);
+  color: whitesmoke;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  .text-area {
+    color: #1d1f20;
+  }
+  #card-of-the-day {
+    margin-top: 4rem;
+  }
+  #card-modal {
+    margin-top: 2rem;
+    border-radius: $base-border-radius;
+    padding: 1rem;
+    @include flex(column, center, center);
+    width: 75%;
+    border: 1px solid $primary;
+    #card-stats {
+      @include flex(row, center, space-around);
+      p {
+        margin: 0.25rem;
+        padding: 0.25rem;
+        border: 0.5px solid $primary;
+        border-radius: $base-border-radius;
+        @include flex(column, center, center);
+        span {
+          font-size: 1.2rem;
+          color: $primary;
+        }
+      }
+    }
+  }
   img {
     width: 200px;
     height: 400px;
     border-radius: 10px;
+  }
+  button {
+    @include button($accent1);
+    box-shadow: 0 0 10px 5px $primary;
   }
 }

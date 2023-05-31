@@ -7,7 +7,7 @@ $gradient-end: #2e3031;
   @include flex(column, flex-start, center);
   @include radial-gradient($gradient-start, $gradient-end);
   color: white;
-  height: 100vh;
+  height: 85vh;
   header {
     @include flex(column, center, center);
     font-family: "Marck Script", cursive;

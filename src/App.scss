@@ -23,6 +23,9 @@
       @include button($secondary);
     }
   }
+  button {
+    @include button($accent1);
+  }
 }
 
 @mixin radial-gradient($start, $end) {

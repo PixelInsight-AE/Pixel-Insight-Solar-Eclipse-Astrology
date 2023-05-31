@@ -3,6 +3,7 @@ const CardOfTheDay = ({ cardOfTheDay, handleModalClick }) => {
   // TODO: Move to api.js or similar
   // const fetchCardOfTheDay = async () => {
   //   const response = await fetch("http://localhost:3333/card_of_the_day");
+
   //   const data = await response.json();
   //   if (!response.ok) {
   //     throw new Error("Network response was not ok");
@@ -22,7 +23,7 @@ const CardOfTheDay = ({ cardOfTheDay, handleModalClick }) => {
   // };
 
   return (
-    <div onClick={handleModalClick} className="card-of-the-day">
+    <div onClick={handleModalClick} id="card-of-the-day">
       {cardOfTheDay ? (
         <img src={cardOfTheDay.image_url} alt={cardOfTheDay.name} />
       ) : null}

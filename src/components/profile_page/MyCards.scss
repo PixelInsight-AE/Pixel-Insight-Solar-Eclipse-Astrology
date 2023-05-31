@@ -7,10 +7,11 @@ $gradient-end: #2e3031;
 
 #MyCards {
   @include radial-gradient($gradient-start, $gradient-end);
-
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: whitesmoke;
   #users-cards {
     display: flex;
     flex-direction: row;

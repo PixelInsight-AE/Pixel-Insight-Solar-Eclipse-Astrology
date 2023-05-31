@@ -19,9 +19,7 @@ const SignUp = () => {
   });
 
   useEffect(() => {}, [newUser.errors]);
-  useEffect(() => {
-    console.log("authError", authError);
-  }, [authError]);
+
   const handleChange = (e) => {
     e.preventDefault();
     const emailRegex = /\S+@\S+\.\S+/;
@@ -124,12 +122,12 @@ const SignUp = () => {
           />
 
           <button type="submit">Send</button>
-          <p>
+          {/* <p>
             Already have an account?
             <Link to="/sign-up">
               <span>Login</span>
             </Link>
-          </p>
+          </p> */}
         </form>
       </div>
 

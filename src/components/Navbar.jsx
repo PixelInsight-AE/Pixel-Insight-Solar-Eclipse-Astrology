@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { useAuth } from "../../src/hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+
 const NavBar = () => {
   const { login, logout, isAuthenticated, authError } = useAuth();
-
+  const [hamburger, setHamburger] = useState(false);
+  const currentUser = localStorage.getItem("sea-username");
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
+
+  const handleClick = () => {
+    setHamburger(!hamburger);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +28,10 @@ const NavBar = () => {
       <div>
         <h1>Solar Eclipse Astrology</h1>
       </div>
-      <div>
+      <div></div>
+      {currentUser ? (
+        <button onClick={handleClick}>{currentUser}</button>
+      ) : (
         <form onSubmit={handleSubmit}>
           {" "}
           <input
@@ -46,7 +54,13 @@ const NavBar = () => {
           />
           <button type="submit">Login</button>
         </form>
-      </div>
+      )}
+      {hamburger && (
+        <div id="hamburger">
+          <button onClick={logout}>Logout</button>
+          <button>Account</button>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,45 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 //TODO: Move into a parent component with a conditional render for either draw card or feeling buttons.
-const DrawCardButton = ({ cardOfTheDay, setIsCardDrawn }) => {
-  const handleClick = (setIsCardDrawn) => {
-    //sendCardToBackend(cardOfTheDay);
-    setIsCardDrawn(true);
-  };
-
+const DrawCardButton = ({ handleClick }) => {
   return (
-    <button
-      id="card-of-the-day-button"
-      onClick={() => handleClick(setIsCardDrawn)}
-    >
+    <button id="card-of-the-day-button" onClick={handleClick}>
       Thoughts?
     </button>
   );
 };
 
-const FeelingPositiveOrNegative = () => {
-  return (
-    <div className="feeling-positive-or-negative">
-      <button id="feeling-positive-button">Feeling Positive</button>
-      <button id="feeling-negative-button">Feeling Negative</button>
-    </div>
-  );
-};
-const ShareFeelings = ({ cardOfTheDay }) => {
+const ShareFeelings = ({ cardOfTheDay, handleClick }) => {
   const [userFeelings, setUserFeelings] = useState(null);
   const [userThoughts, setUserThoughts] = useState("");
-  // const validateUserThoughts = () => {
-  //   if (userThoughts === null) {
-  //     return "Please enter your feelings about your card of the day.";
-  //   }
-  //   if (userThoughts.length > 200) {
-  //     return "Max 200 characters.";
-  //   }
-  //   if (userFeelings === null) {
-  //     return "Please select whether you are feeling positive or negative.";
-  //   }
-  // };
-  // const error = validateUserThoughts();
+
   const token = localStorage.getItem("sea-token");
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -74,21 +47,22 @@ const ShareFeelings = ({ cardOfTheDay }) => {
       </form>
       <button onClick={() => setUserFeelings(true)}>Posotive</button>
       <button onClick={() => setUserFeelings(false)}>Negative</button>
+      <button onClick={handleClick}>close</button>
     </>
   );
 };
 
 const DrawCardOrShowFeeling = ({ cardOfTheDay }) => {
   const [isCardDrawn, setIsCardDrawn] = useState(false);
+  const handleClick = () => {
+    setIsCardDrawn(!isCardDrawn);
+  };
   return (
     <>
       {isCardDrawn ? (
-        <ShareFeelings cardOfTheDay={cardOfTheDay} />
+        <ShareFeelings cardOfTheDay={cardOfTheDay} handleClick={handleClick} />
       ) : (
-        <DrawCardButton
-          cardOfTheDay={cardOfTheDay}
-          setIsCardDrawn={setIsCardDrawn}
-        />
+        <DrawCardButton handleClick={handleClick} cardOfTheDay={cardOfTheDay} />
       )}
     </>
   );
